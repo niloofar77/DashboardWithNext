@@ -24,7 +24,7 @@ export default function Home() {
   }, [router]);
 
   return (
-    <div>
+    <div >
       <h1>Loading...</h1>
       <p>Redirecting...</p>
     </div>

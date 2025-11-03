@@ -41,20 +41,13 @@ export default function UsersCustom() {
         fetchPosts()
     },[])
     return(
-        <div className=" h-screen w-screen bg-gray-100 m:2">
+        <div className=" h-screen w-screen  bg-white dark:bg-black shadow p-4 text-black  dark:text-white  m:2">
           
             <h1 className="m-4 ">Users inforamtion :</h1>
-         
-         
-              
-            {/* <ul>
-0                {users?.map((
-                    user:User
-                )=>(<li key={user.id}>{user.name}</li>))}
-           
-            </ul> */}
+
+            
             <div className="m-4">
-                     <TableCustom  data={users}></TableCustom>
+                <TableCustom  data={users}></TableCustom>
             </div>
           
         </div>

@@ -5,7 +5,7 @@ import { ClipboardMinus } from 'lucide-react';
 import { ChartCustom } from "@/components/chartCustom/page";
 import { AreaChartCustom } from "@/components/areaChartCustom/page";
 import { PieCharCustom } from "@/components/pieChartCustom/page";
-import { logout } from "../(auth)/login/action";
+
 export default function DashboardPage() {
   return (
     <div>
@@ -15,9 +15,7 @@ export default function DashboardPage() {
           Welcome to your project dashboard. Here you can find all the information about your project.
         </p>
       </div>
-      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Dashboard cards */}
         <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
             <div className="flex flex-row gap-2" ><ClipboardMinus />
             <h3 className="font-medium mb-2">Getting Started</h3></div>
@@ -27,12 +25,10 @@ export default function DashboardPage() {
             Learn how to set up and configure your new project.
           </p>
           </div>
-    
-         
         </div>
         
         <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-         
+
           <div className="flex flex-row gap-2" ><ClipboardMinus />
           <h3 className="font-medium mb-2">Documentation</h3>
           </div>
@@ -61,7 +57,7 @@ export default function DashboardPage() {
         <PieCharCustom></PieCharCustom>
       </div>
       </div>
-   
+
     </div>
   );
 }

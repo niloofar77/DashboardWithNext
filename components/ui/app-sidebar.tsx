@@ -16,7 +16,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 
-// This is sample data.
+
 const data = {
   navMain: [
     {
@@ -26,7 +26,7 @@ const data = {
       items: [
         {
           title: "Users",
-          url: "/users",
+          url: "dashboard/users",
           icon: Inbox,
         },
     
@@ -37,7 +37,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar {...props}  >
+    <Sidebar {...props}  className="bg-white dark:bg-black" >
       <SidebarHeader>
         <SidebarMenu >
           <SidebarMenuItem >

@@ -11,37 +11,54 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { logout } from "@/app/(auth)/login/action";
+import { useState } from "react";
+import ModeToggle from "../ModeToggle/page";
+import { useRouter } from "next/navigation";
+import { useProfile } from "@/app/contexts/profile/profileContext";
+
 
 export default function HeaderCustom(props: any) {
+
+  const router=useRouter()
+  const{profileUrl,username}=useProfile()
+  const goProfile=()=>{
+     return  router.push("/dashboard/profile")
+  }
+
+  
   return (
-    <header className="bg-white shadow p-4">
+    <header className="bg-white dark:bg-black shadow p-4 text-black  dark:text-white">
       <div className="flex items-center justify-between">
-        {/* Left Section */}
         <div className="flex items-center space-x-4">
           <button onClick={props.toggleSidebar} className="mr-4">
             <Menu className="cursor-pointer" />
           </button>
           <Image height={80} width={80} alt="Logo" src={"/next.svg"}></Image>
+          <ModeToggle></ModeToggle>
+
         </div>
 
-        {/* Right Section */}
         <div className="flex items-center space-x-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <div className="flex items-center gap-2 cursor-pointer">
+              <p id="avatarUsername">{username}</p> 
                 <Avatar>
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
+                <AvatarImage src={profileUrl} />
+          
+                <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
                 <ChevronDown className="w-4 h-4" />
               </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem onClick={()=>logout()}>Logout</DropdownMenuItem>
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem  onClick={goProfile}>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Settings</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => logout()}>
+                    Logout
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

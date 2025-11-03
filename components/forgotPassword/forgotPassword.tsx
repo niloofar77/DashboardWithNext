@@ -11,7 +11,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useActionState, useState } from "react";
-import { useTheme } from "../theme-provider";
+import { useTheme } from "../theme/theme-provider";
 import { login } from "@/app/(auth)/login/action";
 
 export default function ForgotPasswordForm() {

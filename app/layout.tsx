@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import{ThemeProvider} from "@/components/theme-provider"
+import{ThemeProvider} from "@/components/theme/theme-provider"
 
 
 
@@ -22,19 +22,13 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" >
-       <ThemeProvider>
+    <html lang="en"  >
+      <ThemeProvider >
       <body>
-       
-       
-            {/* <HeaderCustom></HeaderCustom> */}
-            <main>
+            <main >
               {children}
               
               </main>
-              {/* <FooterCustom></FooterCustom> */}
-          
-         
         
         
       </body>
