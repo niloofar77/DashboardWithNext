@@ -109,6 +109,7 @@ import Link from "next/link";
 import { User, Eye } from "lucide-react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 
 
 const LoginForm = () => {
@@ -171,7 +172,7 @@ const LoginForm = () => {
 
               <div className="flex justify-between text-sm text-gray-500">
                 <span></span> 
-                <Link href="#" className="text-purple-600 hover:underline">Forgot your password?</Link>
+                <Link href="/forgotPassword" className="text-purple-600 hover:underline" >Forgot your password?</Link>
               </div>
 
               <Button type="submit" className="w-full bg-purple-900 text-white py-2 rounded-md">Login</Button>

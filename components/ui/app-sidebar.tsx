@@ -1,7 +1,5 @@
 import * as React from "react";
-import { GalleryVerticalEnd } from "lucide-react";
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
-
+import { Inbox, Settings } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -15,6 +13,10 @@ import {
   SidebarMenuSubItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+
 
 
 const data = {
@@ -35,23 +37,22 @@ const data = {
   ],
 };
 
+
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const router=useRouter()
+  
+  
+
+const  handleNavgiate= ()=>{
+  router.push("/")
+
+  }
   return (
     <Sidebar {...props}  className="bg-white dark:bg-black" >
       <SidebarHeader>
         <SidebarMenu >
           <SidebarMenuItem >
-            <SidebarMenuButton size="lg" asChild>
-              <a href="#">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <GalleryVerticalEnd className="size-4" />
-                </div>
-                <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-semibold">Documentation</span>
-                  <span className="">v1.0.0</span>
-                </div>
-              </a>
-            </SidebarMenuButton>
+              <Image height={80} width={80} alt="Logo" src={"/next.svg"} onClick={handleNavgiate}></Image>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
@@ -61,20 +62,20 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             {data.navMain.map((item) => (
               <SidebarMenuItem key={item.title} >
                 <SidebarMenuButton asChild  >
-                  <a href={item.url} className="font-medium">
+                  <Link href={item.url} className="font-medium">
                     <item.icon className="w-5 h-5" />
                     <span> {item.title} </span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
                 {item.items?.length ? (
                   <SidebarMenuSub>
                     {item.items.map((item) => (
                       <SidebarMenuSubItem key={item.title}>
                         <SidebarMenuSubButton asChild>
-                          <a href={item.url} className="font-medium">
+                          <Link href={item.url} className="font-medium">
                             <item.icon className="w-5 h-5" />
                             <span> {item.title} </span>
-                          </a>
+                          </Link>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                     ))}

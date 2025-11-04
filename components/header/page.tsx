@@ -11,7 +11,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { logout } from "@/app/(auth)/login/action";
-import { useState } from "react";
 import ModeToggle from "../ModeToggle/page";
 import { useRouter } from "next/navigation";
 import { useProfile } from "@/app/contexts/profile/profileContext";
@@ -33,7 +32,7 @@ export default function HeaderCustom(props: any) {
           <button onClick={props.toggleSidebar} className="mr-4">
             <Menu className="cursor-pointer" />
           </button>
-          <Image height={80} width={80} alt="Logo" src={"/next.svg"}></Image>
+          <Image height={80} width={80} alt="Logo" src={"/next.svg"} ></Image>
           <ModeToggle></ModeToggle>
 
         </div>
