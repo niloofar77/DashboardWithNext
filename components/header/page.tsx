@@ -14,6 +14,7 @@ import { logout } from "@/app/(auth)/login/action";
 import ModeToggle from "../ModeToggle/page";
 import { useRouter } from "next/navigation";
 import { useProfile } from "@/app/contexts/profile/profileContext";
+import ChangeLang from "../changeLang/page";
 
 
 export default function HeaderCustom(props: any) {
@@ -34,6 +35,7 @@ export default function HeaderCustom(props: any) {
           </button>
           <Image height={80} width={80} alt="Logo" src={"/next.svg"} ></Image>
           <ModeToggle></ModeToggle>
+          <ChangeLang></ChangeLang>
 
         </div>
 

@@ -79,7 +79,8 @@ import {
   
     return (
       <>
-         <div className="flex flex-row items-left justify-left m-5">
+
+      <div className="flex flex-row items-left justify-left m-5 ">
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <Image
@@ -97,15 +98,14 @@ import {
             </DropdownMenu>
           </div>
   
-        <div className="flex flex-col justify-center items-center">
-       
-          <Table className="mt-20">
+        <div className="flex flex-col justify-center items-center overflow-hidden">
+
+          <Table className="mt-20 overflow-auto hide-scrollbar">
             <TableHeader>
               <TableRow className="border bottom-1 border-gray-400">
                 <TableHead className="bg-gray-300">Id</TableHead>
                 <TableHead className="bg-gray-300">Name</TableHead>
                 <TableHead className="bg-gray-300">Username</TableHead>
-                <TableHead className="bg-gray-300">Email</TableHead>
                 <TableHead className="bg-gray-300">City</TableHead>
               </TableRow>
             </TableHeader>
@@ -115,7 +115,7 @@ import {
                   <TableCell className="font-medium">{index}</TableCell>
                   <TableCell className="font-medium">{user.name}</TableCell>
                   <TableCell>{user.username}</TableCell>
-                  <TableCell>{user.email}</TableCell>
+
                   <TableCell>{user.address.city}</TableCell>
                 </TableRow>
               ))}
@@ -139,6 +139,8 @@ import {
             </PaginationContent>
           </Pagination>
         </div>
+    
+         
       </>
     );
   }
