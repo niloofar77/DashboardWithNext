@@ -28,7 +28,7 @@ async function getProducts() {
     }
   return (
     <div>
-        {productData&&<p>{productData.price}</p>}
+        {productData&&<p>{productData}</p>}
       <ul>
         {productItems?.map((item) => (
           <li key={item.id}>{item.title}

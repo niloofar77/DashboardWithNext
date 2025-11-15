@@ -4,9 +4,16 @@
 @tailwind utilities;
 
 body {
-  @apply bg-white text-black; 
+  @apply bg-white text-black   overflow-hidden; 
+
 }
 
 body.dark {
   @apply bg-gray-900 text-white; 
+}
+
+@layer components {
+  .flexContainer {
+    @apply  flex flex-row justify-center items-center;
+  }
 }

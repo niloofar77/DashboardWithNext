@@ -35,10 +35,11 @@ export default function HeaderCustom(props: any) {
           </button>
           <Image height={80} width={80} alt="Logo" src={"/next.svg"} ></Image>
           <ModeToggle></ModeToggle>
-          <ChangeLang></ChangeLang>
+          <div>
+            <ChangeLang></ChangeLang>
+          </div>
 
         </div>
-
         <div className="flex items-center space-x-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -56,7 +57,7 @@ export default function HeaderCustom(props: any) {
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem  onClick={goProfile}>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Settings</DropdownMenuItem>
+                {/* <DropdownMenuItem>Settings</DropdownMenuItem> */}
                 <DropdownMenuItem onClick={() => logout()}>
                     Logout
               </DropdownMenuItem>

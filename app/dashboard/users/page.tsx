@@ -1,5 +1,6 @@
 "use client"
 
+import SearchBar from "@/components/searchBar/page"
 import { TableCustom } from "@/components/tableCustom/page"
 import { useEffect, useState } from "react"
 
@@ -41,12 +42,16 @@ export default function UsersCustom() {
     fetchPosts()
   }, [])
   return (
-    <div className=" h-screen w-screen  bg-white dark:bg-black shadow p-4 text-black  dark:text-white  m:2">
+    <div className=" h-screen w-screen  bg-white dark:bg-black shadow p-4 text-black  dark:text-white  m:2  hide-scrollbar">
 
       <h1 className="m-4 ">Users inforamtion :</h1>
+      <div className="flexContainer">
+        <SearchBar></SearchBar>
+      </div>
 
 
-      <div className="m-4 ">
+
+      <div className="m-4  ">
         <TableCustom data={users}></TableCustom>
         
       </div>
